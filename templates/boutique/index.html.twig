@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello BoutiqueController!{% endblock %}
+
+{% block body %}
+<h1> Boutique List </h1>
+{% for boutique in boutiques %}
+<p><b>nom : </b> {{ boutique.nom }} </p>
+<p><b>adresse : </b> {{ boutique.adresse }} </p>
+<a href="{{path('addboutique')}}">Add boutique</a>
+<a href="{{path('boutique_edit', { id: boutique.id} )}}">Update</a>
+<a href="{{path('app_boutique_details', { id: boutique.id} )}}">details</a>
+<a href="{{path('app_boutique_delete', { id: boutique.id} )}}">delete</a>
+<hr>
+
+{% else %}
+<p>No Boutique Foundw</p>
+{% endfor %}
+{% endblock %}

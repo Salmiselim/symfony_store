@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+<h1> produit List </h1>
+{% for produit in produits %}
+<p><b>nom : </b> {{ produit.nom }} </p>
+<p><b>Date de Création : </b> {{ produit.dateCreation | date('d/m/Y') }} </p>  
+<p><b>adresse : </b> {{ produit.prix }} </p>
+
+<a href="{{path('addproduit')}}">Add produit</a>
+<a href="{{path('produit_edit', { id: produit.id} )}}">Update</a>
+
+<a href="{{path('app_produit_details', { id: produit.id} )}}">details</a>
+
+<a href="{{path('app_produit_delete', { id: produit.id} )}}">delete</a><hr>
+{% else %}
+<p>No Boutique Found</p>
+{% endfor %}
+{% endblock %}

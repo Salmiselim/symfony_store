@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Boutique Details{% endblock %}
+
+{% block body %}
+<h1> Boutique : {{ boutique.nom }} </h1>
+<p><b>id : </b> {{ boutique.id }} </p>
+<p><b>nom : </b> {{ boutique.nom }} </p>
+<p><b>adresse : </b> {{ boutique.adresse }} </p>
+<a href="{{ path('app_boutique') }}">Return to List</a>
+{% endblock %}
